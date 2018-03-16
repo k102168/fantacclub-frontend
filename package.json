@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "md-free-angular-cli",
   "version": "1.4.2",
   "license": "MIT",
@@ -58,5 +59,32 @@
     "ts-node": "2.0.0",
     "tslint": "4.5.0",
     "typescript": "2.4.2"
+=======
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/nodemon/bin/nodemon.js server.js"
+  },
+  "author": "Owais Ahmed Qureshi",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.0.2",
+    "jsonwebtoken": "^8.1.1",
+    "mongoose": "^5.0.7",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+>>>>>>> 1e2a5a8529d93cd35e752050b86f962faa8da5ab
   }
 }
