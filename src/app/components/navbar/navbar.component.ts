@@ -1,6 +1,9 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { Router } from '@angular/router';
+import { DashboardComponent } from '../../dashboard/dashboard.component';
+import { GalleryComponent } from '../../gallery/gallery.component';
 
 @Component({
   selector: 'app-navbar',
@@ -22,6 +25,11 @@ export class NavbarComponent implements OnInit {
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
+    }
+    OnClick=function()
+    {
+        console.log("enter in function");  
+    this.router.navigate(['/'+GalleryComponent]);
     }
 
     sidebarOpen() {

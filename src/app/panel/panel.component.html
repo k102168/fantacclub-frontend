@@ -1,0 +1,104 @@
+
+<div class="main-content">
+    <div  class="container-fluid">
+
+
+            <div class="row" >
+                    <div class="col-lg-6 col-lg-offset-3 ">
+                        
+                      <div class="card">
+                          <div class="card-header" data-background-color="red">
+                              
+                              <h4 class="title">Add Pigeons</h4> 
+                              <!-- <p class="category">Complete your profile</p> -->
+                          </div>
+                          <div class="card-content">
+                              <form>
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">Name</label>
+                                              <input type="text" class="form-control" >
+                                          </div>
+                                      </div>
+                                  </div>
+                  
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                        <div class="form-group form-black label-floating is-empty">
+                                            <label class="control-label">No Of Pigeons</label>
+                                            <input type="number" class="form-control" >
+                                        </div>
+                                    </div>
+                                    </div>
+                                  <!-- <button type="submit" class="btn btn-danger pull-right center-block">Submit</button>
+                                  <br>
+                                 <a href="gallery"> <p class="text-left">Need Help?</p></a>
+                                  <div class="clearfix"></div> -->
+                                 <!-- apni taraf se -->
+                                  <div class="form-group">
+                                      <label class="col-md-5 control-label" for="singlebutton"></label>
+                                      <div class="col-md-5">
+                                          <button id="singlebutton"  name="singlebutton" class="btn btn-danger center-block">
+                                              Submit
+                                          </button>
+                                      </div>
+                                  </div>
+                              </form>
+                  <br>
+                              <!-- <a href="/dashboard"> <p class="text-left">Need Help?</p></a> -->
+                              <div class="clearfix"></div>
+                              <!-- apni taraf se khatam  -->
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                        <!-- 1st table end here -->
+        <form class="navbar-form navbar-center"  id="filter">
+        <div class="form-group form-black is-empty">
+            <input type="text" [(ngModel)]="term"  name="term" class="form-control" placeholder="Search" >
+            <span class="material-input"></span>
+        </div>
+        <button type="icon" class="btn btn-white btn-round btn-just-icon" >
+                <i class="material-icons">search</i><div class="ripple-container"></div>
+            </button>
+    </form>
+    <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title"> Users List</h4>
+                        <p class="category">All The Users List</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table">
+                            <thead class="text-danger">
+                                <tr>
+                                    <th>id</th>
+                                    <th>Name</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let hero of heroes | filter:term | paginate :{itemsPerPage:5 ,currentPage : p}" >
+                                    <td>{{hero.id}}</td>
+                                    <td>{{hero.name}}</td>
+                                    <td (click)="onsubmit(hero)" [routerLink]="['/usereditcomponent']">
+                                        edit  
+                                        <app-usereditcomponent [message]="message"></app-usereditcomponent>
+                                    </td>
+                                </tr>
+                                <pagination-controls (pageChange)="p=$event"></pagination-controls>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+</div>
+
+</div>
+ 

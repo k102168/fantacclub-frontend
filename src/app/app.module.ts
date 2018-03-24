@@ -17,7 +17,13 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-
+import { GalleryComponent } from './gallery/gallery.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { AdminComponent } from './admin/admin.component';
+import { PanelComponent } from './panel/panel.component';
+import { FilterPipe } from './filter.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { UsereditcomponentComponent } from './usereditcomponent/usereditcomponent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +35,17 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    GalleryComponent,
+    AboutUsComponent,
+    AdminComponent,
+    PanelComponent,
+    FilterPipe,
+    UsereditcomponentComponent,
 
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     FormsModule,
     HttpModule,
     ComponentsModule,

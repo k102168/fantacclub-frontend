@@ -1,6 +1,6 @@
 <div class="wrapper">
-    <div class="sidebar" data-color='red' data-image="">
-        <app-sidebar></app-sidebar>
+    <div class="sidebar" data-color='red' data-image=""> 
+        <app-sidebar></app-sidebar> 
         <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
     </div>
     <div class="main-panel">
@@ -8,6 +8,8 @@
         <router-outlet></router-outlet>
         <div *ngIf="isMaps('maps')">
             <app-footer></app-footer>
+            <a  [routerLink]="['/usereditcomponent']">Open</a>
+            
         </div>
     </div>
 </div>
