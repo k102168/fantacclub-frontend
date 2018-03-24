@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]
 
 ![alt text](http://s3.amazonaws.com/creativetim_bucket/products/53/original/opt_md_angular_thumbnail.jpg "Material Dashboard Angular Free")
@@ -173,7 +172,5 @@ Instagram: <https://instagram.com/creativetimofficial>
 [CHANGELOG]: ./CHANGELOG.md
 
 [version-badge]: https://img.shields.io/badge/version-1.4.2-blue.svg
-=======
 # fantacclub-backend
 pigeon race
->>>>>>> 1e2a5a8529d93cd35e752050b86f962faa8da5ab
