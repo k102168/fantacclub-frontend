@@ -9,16 +9,16 @@
                       <div class="card">
                           <div class="card-header" data-background-color="red">
                               
-                              <h4 class="title">Add Pigeons</h4> 
+                              <h4 class="title">Add Competetion</h4> 
                               <!-- <p class="category">Complete your profile</p> -->
                           </div>
                           <div class="card-content">
-                              <form>
+                              <form #CompetetionFormData="ngForm" (ngSubmit)="AddCompetition(CompetetionFormData)">
                                   <div class="row">
                                       <div class="col-md-12">
                                           <div class="form-group form-black label-floating is-empty">
                                               <label class="control-label">Name</label>
-                                              <input type="text" class="form-control" >
+                                              <input type="text" name="name" id="name"  class="form-control" ngModel>
                                           </div>
                                       </div>
                                   </div>
@@ -26,11 +26,72 @@
                                   <div class="row">
                                       <div class="col-md-12">
                                         <div class="form-group form-black label-floating is-empty">
-                                            <label class="control-label">No Of Pigeons</label>
-                                            <input type="number" class="form-control" >
+                                            <label class="control-label">Place</label>
+                                            <input type="text" name="place" id="place"  class="form-control" ngModel>
                                         </div>
                                     </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">User</label>
+                                              <input type="text" name="user" id="user"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">fee</label>
+                                              <input type="number" name="fee" id="fee"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">PriceMoney</label>
+                                              <input type="number" name="pricemoney" id="pricemoney"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">StartDate</label>
+                                              <input type="date" name="startdate" id="startdate"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+  
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">End Date</label>
+                                              <input type="date" name="enddate" id="enddate"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">LeaderBoard</label>
+                                              <input type="text" name="leaderboard" id="leaderboard"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">Pigeons</label>
+                                              <input type="number" name="pigeons" id="pigeons"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
                                   <!-- <button type="submit" class="btn btn-danger pull-right center-block">Submit</button>
                                   <br>
                                  <a href="gallery"> <p class="text-left">Need Help?</p></a>
@@ -67,28 +128,39 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" data-background-color="red">
-                        <h4 class="title"> Users List</h4>
+                        <h4 class="title"> Competition List</h4>
                         <p class="category">All The Users List</p>
                     </div>
                     <div class="card-content table-responsive">
                         <table class="table">
                             <thead class="text-danger">
                                 <tr>
-                                    <th>id</th>
                                     <th>Name</th>
-                                    <th>Edit</th>
+                                    <th>Place</th>
+                                    <th>Users</th>
+                                    <th>fee</th>
+                                    <th>PriceMoney</th>
+                                    <th>StartDate</th>
+                                    <th>EndDate</th>
+                                    <!-- <th>edit</th> -->
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let hero of heroes | filter:term | paginate :{itemsPerPage:5 ,currentPage : p}" >
-                                    <td>{{hero.id}}</td>
-                                    <td>{{hero.name}}</td>
-                                    <td (click)="onsubmit(hero)" [routerLink]="['/usereditcomponent']">
-                                        edit  
-                                        <app-usereditcomponent [message]="message"></app-usereditcomponent>
+                                 <tr *ngFor="let Competitiondata of Repdata | filter:term | paginate :{itemsPerPage:5 ,currentPage : p}" >
+                                    <td>{{Competitiondata.name}}</td>
+                                    <td>{{Competitiondata.place}}</td>
+                                    <td>{{Competitiondata.users}}</td>
+                                    <td>{{Competitiondata.fee}}</td>
+                                    <td>{{Competitiondata.priceMoney}}</td>
+                                    <td>{{Competitiondata.startDate}}</td>
+                                    <td>{{Competitiondata.endDate}}</td>
+                                    <td>
+                                        <div class="navbar-form navbar-right">
+                                            <button type="submit"  routerLink="/usereditcomponent/{{Competitiondata._id}}" (click)="Getobject(Competitiondata)" value="User" class="btn btn-danger pull-right">edit</button>
+                                    </div>
                                     </td>
                                 </tr>
-                                <pagination-controls (pageChange)="p=$event"></pagination-controls>
+                                <pagination-controls (pageChange)="p=$event"></pagination-controls> 
                             </tbody>
                         </table>
 
@@ -101,4 +173,5 @@
 </div>
 
 </div>
+
  

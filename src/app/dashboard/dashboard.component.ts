@@ -1,12 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
+class Range implements Iterable<number> {
+  constructor(
+      public readonly low: number,
+      public readonly high: number,
+      public readonly step: number = 1
+  ) {
+  }
 
+  *[Symbol.iterator]() {
+      for (let x = this.low; x <= this.high; x += this.step) {
+          yield x;
+      }
+  }
+}
+
+function range(low: number, high: number) {
+  return new Range(low, high);
+}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  
+  dashboarddata = [
+    { name :'Furqan',place:'punjab' ,users :'5', fee :'5000', pricemoney:20000},
+    ];
+    
+    NoOfPigeons=2;
+   public Pigeons =range(1,this.NoOfPigeons); 
+
+
 
   constructor() { }
   startAnimationForLineChart(chart){

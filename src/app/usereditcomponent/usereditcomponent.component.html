@@ -1,3 +1,242 @@
-<div > 
-it works
-</div>
+<div class="main-content">
+        <div class="container-fluid">
+                <div class="row" >
+                        <div class="col-md-6  ">
+                          <div class="card">
+                              <div class="card-header" data-background-color="red">
+                                  
+                                  <h4 class="title">Edit Competetion</h4> 
+                                  <!-- <p class="category">Complete your profile</p> -->
+                              </div>
+                              <div class="card-content">
+                                  <form #CompetetionEdit="ngForm" (ngSubmit)="EditCompetetion(CompetetionEdit)">
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">Name</label>  -->
+                                                  <input  placeholder="Name"type="text" name="name" id="name"  class="form-control" [(ngModel)]="Name">
+                                              </div>
+                                          </div>
+                                      </div>
+                      
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <!-- <label class="control-label">Place</label> -->
+                                                <input placeholder="place" type="text" name="place" id="place"  class="form-control" [(ngModel)]="Place">
+                                            </div>
+                                        </div>
+                                        </div>
+    
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">User</label> -->
+                                                  <input placeholder="Number of users" type="text" name="user" id="user"  class="form-control" [(ngModel)]="User">
+                                              </div>
+                                          </div>
+                                          </div>
+    
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">fee</label> -->
+                                                  <input placeholder="Fee" type="text" name="fee" id="fee"  class="form-control" [(ngModel)]="Fee">
+                                              </div>
+                                          </div>
+                                          </div>
+    
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">PriceMoney</label> -->
+                                                  <input placeholder="PriceMoney" type="text" name="pricemoney" id="pricemoney"  class="form-control" [(ngModel)]="Pricemoney">
+                                              </div>
+                                          </div>
+                                          </div>
+    
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">StartDate</label> -->
+                                                  <input type="date" name="startdate" id="startdate"  class="form-control" [(ngModel)]="Startdate">
+                                              </div>
+                                          </div>
+                                          </div>
+      
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">EndDate</label> -->
+                                                  <input type="date" name="enddate" id="enddate"  class="form-control" [(ngModel)]="EndDate">
+                                              </div>
+                                          </div>
+                                          </div>
+
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">LeaderBoard</label> -->
+                                                  <input placeholder="LeaderBoard"type="text" name="leaderboard" id="leaderboard"  class="form-control" [(ngModel)]="LeaderBoard" >
+                                              </div>
+                                          </div>
+                                          </div>
+
+
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">Pigeons</label> -->
+                                                  <input  placeholder="No Of Pigeons" type="number" name="pigeons" id="pigeons"  class="form-control" [(ngModel)]="Pigeons">
+                                              </div>
+                                          </div>
+                                          </div>
+
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <!-- <label class="control-label">Pigeons</label> -->
+                                                  <input  placeholder="id" type="text" name="id" id="id"  class="form-control" [(ngModel)]="id" readonly>
+                                              </div>
+                                          </div>
+                                          </div>
+                                      <!-- <button type="submit" class="btn btn-danger pull-right center-block">Submit</button>
+                                      <br>
+                                     <a href="gallery"> <p class="text-left">Need Help?</p></a>
+                                      <div class="clearfix"></div> -->
+                                     <!-- apni taraf se -->
+                                      <div class="form-group">
+                                          <label class="col-md-5 control-label" for="singlebutton"></label>
+                                          <div class="col-md-5">
+                                              <button id="singlebutton"  name="singlebutton" class="btn btn-danger center-block">
+                                                  Submit
+                                              </button>
+                                          </div>
+                                      </div>
+                                  </form>
+                      <br>
+                                  <!-- <a href="/dashboard"> <p class="text-left">Need Help?</p></a> -->
+                                  <div class="clearfix"></div>
+                                  <!-- apni taraf se khatam  -->
+                              </div>
+                          </div>
+                      </div>
+                     
+<!-- secondcolumn -->
+                      <div class="col-md-6">
+                             
+                          <div class="card">
+                                <div class="card-header" data-background-color="red">
+                                    
+                                    <h4 class="title">Add Participants</h4> 
+                                    <!-- <p class="category">Complete your profile</p> -->
+                                </div>
+                                <div class="card-content">
+                                    <form #AddParticipantData="ngForm" (ngSubmit)="Addparticipant(AddParticipantData)">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group form-black label-floating is-empty">
+                                                    <label class="control-label">Name</label>
+                                                    <input type="text" name="name" id="name"  class="form-control" ngModel>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group form-black label-floating is-empty">
+                                                  <label class="control-label">PhoneNumber</label>
+                                                  <input type="number" name="phonenum" id="phonenum"  class="form-control" ngModel>
+                                              </div>
+                                          </div>
+                                          </div>
+      
+                                          <div class="row">
+                                              <div class="col-md-12">
+                                                <div class="form-group form-black label-floating is-empty">
+                                                    <label class="control-label">Email</label>
+                                                    <input type="email" name="email" id="email"  class="form-control" ngModel>
+                                                </div>
+                                            </div>
+                                            </div>
+      
+                                            <div class="row">
+                                              <div class="col-md-12">
+                                                <div class="form-group form-black label-floating is-empty">
+                                                    <label class="control-label">Wins</label>
+                                                    <input type="number" name="wins" id="wins"  class="form-control" ngModel>
+                                                </div>
+                                            </div>
+                                            </div>
+      
+                                    <!-- <button type="submit" class="btn btn-danger pull-right center-block">Submit</button>
+                                        <br>
+                                       <a href="gallery"> <p class="text-left">Need Help?</p></a>
+                                        <div class="clearfix"></div> -->
+                                       <!-- apni taraf se -->
+                                        <div class="form-group">
+                                            <label class="col-md-5 control-label" for="singlebutton"></label>
+                                            <div class="col-md-5">
+                                                <button id="singlebutton"   name="singlebutton" class="btn btn-danger center-block">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                        <br>
+                                    <!-- <a href="/dashboard"> <p class="text-left">Need Help?</p></a> -->
+                                    <div class="clearfix"></div>
+                                    <!-- apni taraf se khatam  -->
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                    </div>
+                    <!-- 1st row end -->
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12" style="width:100%;" >
+                            <div class="card" >
+                                <div class="card-header"  style="background-color:#3498db;">
+                                    <h4 class="title">Users</h4>
+                                    <!-- <p class="category">New employs on 15th September, 2016</p> -->
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-warning">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>TimetoFly</th>
+                                                <th *ngFor="let pigeon of Pigeonsnum">Pigeons{{pigeon}}</th>
+                                                <th>TotalTime</th>
+                                                <th>grandtotal</th>
+                                            
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let data of dashboarddata">
+                                                <td>{{data.name}}</td>
+                                                <td>22:2:0</td>
+                                                <td>7</td>
+                                                <td>18:0:0:0</td>
+                                                <td>19:0:0:0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                      
+                            
+                       
+        </div>
+    </div>
+
+    

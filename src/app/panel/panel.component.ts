@@ -1,8 +1,10 @@
 import { Component, OnInit,Pipe, PipeTransform ,Inject} from '@angular/core';
 import { Router } from '@angular/router';
 import { FilterPipe} from '../filter.pipe';
-
-
+import {Http,Response, Headers, RequestOptions } from '@angular/http';   
+import {GetAllService} from '../services/participants/get-all.service'
+import{GetAllCompetetionService} from '../services/competition/get-all-competetion.service'
+import {PostcompetitionService } from '../services/competition/postcompetition.service'
 // import {UsereditcomponentComponent}  from '../usereditcomponent/usereditcomponent.component';
 @Component({
   selector: 'app-panel',
@@ -11,27 +13,35 @@ import { FilterPipe} from '../filter.pipe';
   
 })
 export class PanelComponent implements OnInit {
-  
-  heroes = [
-  {id: 11, name: 'Furqan'},
-  { id: 12, name: 'Owais' },
-  { id: 13, name: 'Safi bhai' },
-  { id: 14, name: 'RAyan' },
-  { id: 15, name: 'noman' },
-  { id: 16, name: 'irafan' },
-  { id: 17, name: 'farhan' },
-  { id: 18, name: 'dukan' },
-  { id: 19, name: 'khakan' },
-  { id: 20, name: 'gul khan' }
-  
-  ];
-  message:"hello";
-  constructor() { }
+  Repdata;
+  constructor(private newService :GetAllService,private router:Router,private getallcompetetion:GetAllCompetetionService,
+  private postcompetetion:PostcompetitionService) { }
 
-  ngOnInit() { }
-  onsubmit(hero):void
+  ngOnInit() {
+    // this.newService.GetAll().subscribe(data =>  {
+    // this.Repdata = data
+    // console.log(data);
+    // })
+  
+    this.getallcompetetion.GetAllCompetition().subscribe(data =>  {
+      this.Repdata = data
+      console.log(this.Repdata);
+      // this.Repdata[0].name="Mahh";
+      // console.log(this.Repdata[0].name);
+      // console.log('here');
+    })
+      }
+    Getobject(competitionobject):void
   {
-    // this.selectedhero = hero;
-    // console.log(this.selectedhero);
+    console.log("competetionobject");
+    console.log(competitionobject._id);
+     //this.router.navigateByUrl('/usereditcomponent');
+    //this.router.navigate(['/usereditcomponent', {p1: competitionobject }]);
+  }
+  AddCompetition(form){
+    this.postcompetetion.saveCompetetion(form.value).subscribe(); 
+    console.log("Addcomepetition form");  
+    //console.log(form.value);
+    location.reload();
   }
 }
