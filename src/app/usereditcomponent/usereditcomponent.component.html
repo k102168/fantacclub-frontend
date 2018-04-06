@@ -77,7 +77,7 @@
                                             <div class="col-md-12">
                                               <div class="form-group form-black label-floating is-empty">
                                                   <!-- <label class="control-label">LeaderBoard</label> -->
-                                                  <input placeholder="LeaderBoard"type="text" name="leaderboard" id="leaderboard"  class="form-control" [(ngModel)]="LeaderBoard" >
+                                                  <input placeholder="LeaderBoard"type="text" name="noofdays" id="noofdays"  class="form-control" [(ngModel)]="noofdays" >
                                               </div>
                                           </div>
                                           </div>
@@ -168,6 +168,14 @@
                                                 </div>
                                             </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                  <div class="form-group form-black label-floating is-empty">
+                                                      <label class="control-label">RoofNumber</label>
+                                                      <input type="number" name="roofnumber" id="roofnumber"  class="form-control" ngModel>
+                                                  </div>
+                                              </div>
+                                              </div>
       
                                     <!-- <button type="submit" class="btn btn-danger pull-right center-block">Submit</button>
                                         <br>
@@ -204,24 +212,24 @@
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table class="table table-hover">
-                                        <thead class="text-warning">
+                                        <thead >
                                             <tr>
                                                 <th>Name</th>
-                                                <th>TimetoFly</th>
                                                 <th *ngFor="let pigeon of Pigeonsnum">Pigeons{{pigeon}}</th>
-                                                <th>TotalTime</th>
-                                                <th>grandtotal</th>
-                                            
+                                                <th>total time</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let data of dashboarddata">
-                                                <td>{{data.name}}</td>
-                                                <td>22:2:0</td>
-                                                <td>7</td>
-                                                <td>18:0:0:0</td>
-                                                <td>19:0:0:0</td>
-                                            </tr>
+                                        
+                                         <tr  *ngFor="let dashboard of  dashboarddata; let i=index;">
+                                            <td> <input  type="text" name="username" id="username"  class="form-control" [(ngModel)]="dashboard.name"></td>
+                                            <td> <input  type="datetime-local" name="p1t" id="p1t"  class="form-control" [(ngModel)]="dashboard.pigeon1"></td>
+                                            <td> <input  type="datetime-local" name="p2t" id="p2t"  class="form-control" [(ngModel)]="dashboard.pigeon2"></td>
+                                            <td> <input  type="datetime-local" name="totaltime" id="toaltime"  class="form-control" [(ngModel)]="dashboard.totaltime"></td>
+                                            <td><button type="submit"  (click)="Ondashboardclick(data)" value="User" 
+                                                class="btn btn-danger pull-right">edit</button></td>
+                                        </tr>
+                                               
                                         </tbody>
                                     </table>
                                 </div>

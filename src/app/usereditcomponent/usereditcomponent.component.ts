@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import {GetonecompetitionService} from '../services/competition/getonecompetition.service'
 import {UpdatecompetitionService} from '../services/competition/updatecompetition.service'
 import{ PostService} from '../services/participants/post.service'
+import { GetAllService} from '../services/participants/get-all.service'
 class Range implements Iterable<number> {
   constructor(
       public readonly low: number,
@@ -30,23 +31,25 @@ function range(low: number, high: number) {
 
 export class UsereditcomponentComponent implements OnInit {
 
+  NoOfPigeons=2;
+  public Pigeonsnum =range(1,this.NoOfPigeons);
   dashboarddata = [
-    { name :'Furqan',place:'punjab' ,users :'5', fee :'5000', pricemoney:20000},
-    ];
-    
-    NoOfPigeons=2;
-   public Pigeonsnum =range(1,this.NoOfPigeons); 
+    { name :'Furqan',pigeon1:"25:20" , pigeon2:"30:30",totaltime:"55:50"},];
+
+
+ 
+
  Resdata;
   id:any;
-Name: string;Place:string;User:String;Fee:String;Pricemoney:String; LeaderBoard:number; Pigeons:String;
+  getalldata;
+Name: string;Place:string;User:String;Fee:String;Pricemoney:String; noofdays:number; Pigeons:String;
+participantname :string;
   constructor(public route:ActivatedRoute,
    private GetCompetition: GetonecompetitionService,
   private UpdateCompetition:UpdatecompetitionService,
   private postparticipants: PostService,
-  ) {
-  
-  }
-  
+  private Getparticpants : GetAllService,
+  ) {}
   ngOnInit() {
      this.id = this.route.snapshot.params['_id'];
     console.log("in user edit component");
@@ -59,11 +62,20 @@ Name: string;Place:string;User:String;Fee:String;Pricemoney:String; LeaderBoard:
       this.Pricemoney=this.Resdata.priceMoney;
       this.Place=this.Resdata.place;
       this.Pigeons=this.Resdata.pigeons;
-      this.LeaderBoard=this.Resdata.LeaderBoard;
+      this.noofdays=this.Resdata.noofdays;
       this.User=this.Resdata.users;
       this.Fee=this.Resdata.fee;
-      this.LeaderBoard=this.Resdata.leaderBoard; 
+      // this.LeaderBoard=this.Resdata.leaderBoard; 
     })
+
+    this.Getparticpants.GetAll().subscribe(data=>{
+      console.log("Get particpants")
+      console.log(data);
+    this.getalldata=data;
+    this.participantname=this.getalldata[0].name;
+    console.log(this.participantname);
+    })
+
     
   }
   // getOnecompetition()
@@ -73,10 +85,13 @@ Name: string;Place:string;User:String;Fee:String;Pricemoney:String; LeaderBoard:
   //   //   this.Repdata = data
   //   //   console.log(this.Repdata);
   // }
+
+  
   EditCompetetion(form){
     console.log("enter in Edit competetion Function");
     console.log(form.value);
     this.UpdateCompetition.updateCompetetion(form.value).subscribe();
+
   }
   Addparticipant(form)
   {
@@ -84,6 +99,12 @@ Name: string;Place:string;User:String;Fee:String;Pricemoney:String; LeaderBoard:
     console.log(form.value);
     this.postparticipants.Post(form.value).subscribe();
   }
+  Ondashboardclick(dashboardtabledata)
+  {
+    console.log(this.dashboarddata);
+
+  }
+
   
 
 
