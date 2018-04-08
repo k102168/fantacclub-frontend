@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
+import { GetAllService} from '../services/participants/get-all.service'
 class Range implements Iterable<number> {
   constructor(
       public readonly low: number,
@@ -34,7 +35,9 @@ export class DashboardComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor( private Getparticpants : GetAllService,
+  
+  ) { }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -93,7 +96,9 @@ export class DashboardComponent implements OnInit {
   };
   ngOnInit() {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
-
+    this.Getparticpants.GetAll().subscribe(data=>{
+      console.log(data);  
+    })
       const dataDailySalesChart: any = {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
           series: [

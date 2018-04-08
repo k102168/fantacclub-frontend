@@ -47,8 +47,6 @@ import {SigninService} from './services/login/signin.service';
     PanelComponent,
     FilterPipe,
     UsereditcomponentComponent,
-    
-
   ],
   imports: [
     BrowserModule,

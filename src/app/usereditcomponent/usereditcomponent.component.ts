@@ -36,9 +36,6 @@ export class UsereditcomponentComponent implements OnInit {
   dashboarddata = [
     { name :'Furqan',pigeon1:"25:20" , pigeon2:"30:30",totaltime:"55:50"},];
 
-
- 
-
  Resdata;
   id:any;
   getalldata;

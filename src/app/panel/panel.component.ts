@@ -42,6 +42,6 @@ export class PanelComponent implements OnInit {
     this.postcompetetion.saveCompetetion(form.value).subscribe(); 
     console.log("Addcomepetition form");  
     console.log(form.value);
-   // location.reload();
+    location.reload();
   }
 }
