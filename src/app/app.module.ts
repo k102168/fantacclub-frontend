@@ -31,6 +31,10 @@ import { GetonecompetitionService} from './services/competition/getonecompetitio
 import {UpdatecompetitionService} from './services/competition/updatecompetition.service'
 import { PostService} from './services/participants/post.service';
 import {SigninService} from './services/login/signin.service';
+import { CompadminComponent } from './compadmin/compadmin.component';
+import { CompetitioneditComponent } from './competitionedit/competitionedit.component';
+import { ParticipanteditComponent } from './participantedit/participantedit.component';
+import {UpdatePigeonTimingService} from './services/update-pigeon-timing.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +51,9 @@ import {SigninService} from './services/login/signin.service';
     PanelComponent,
     FilterPipe,
     UsereditcomponentComponent,
+    CompadminComponent,
+    CompetitioneditComponent,
+    ParticipanteditComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +71,7 @@ RouterModule,
     UpdatecompetitionService,
     PostService,
     SigninService,
+    UpdatePigeonTimingService,
   ],
   bootstrap: [AppComponent]
 })

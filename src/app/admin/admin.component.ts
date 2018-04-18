@@ -29,7 +29,7 @@ console.log("enter in signin function");
       console.log("enter in if condition");
       console.log(this.resposnseddata);
       this.message="";
-      this.router.navigateByUrl('/panel');
+      this.router.navigateByUrl('/competetionedit');
     }
     else{
       console.log("entered in else condition");

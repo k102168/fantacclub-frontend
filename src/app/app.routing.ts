@@ -15,7 +15,9 @@ import{ AboutUsComponent} from  './about-us/about-us.component'
 import { AdminComponent } from './admin/admin.component';
 import { PanelComponent } from './panel/panel.component';
 import { UsereditcomponentComponent } from './usereditcomponent/usereditcomponent.component';
-
+import {CompadminComponent} from './compadmin/compadmin.component'
+import {CompetitioneditComponent} from './competitionedit/competitionedit.component'
+import {ParticipanteditComponent} from './participantedit/participantedit.component'
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
@@ -29,6 +31,9 @@ const routes: Routes =[
     {path :'login' ,          component:AboutUsComponent},
     {path :'admin' ,          component:AdminComponent},
     {path :'panel' ,          component:PanelComponent},
+    {path :'compadmin',       component:CompadminComponent},
+    {path :'participantedit/:_id' ,          component:ParticipanteditComponent},
+    {path :'competetionedit' ,          component:CompetitioneditComponent},
     {path :'usereditcomponent/:_id' , component:UsereditcomponentComponent},
     { path: '',               redirectTo: 'dashboard', pathMatch: 'full' }
 

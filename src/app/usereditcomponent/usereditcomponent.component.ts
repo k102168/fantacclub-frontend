@@ -31,8 +31,8 @@ function range(low: number, high: number) {
 
 export class UsereditcomponentComponent implements OnInit {
 
-  NoOfPigeons=2;
-  public Pigeonsnum =range(1,this.NoOfPigeons);
+public Pigeonsum=6;
+  //  public Pigeonsnum =range(1,this.NoOfPigeons);
   dashboarddata = [
     { name :'Furqan',pigeon1:"25:20" , pigeon2:"30:30",totaltime:"55:50"},];
 
@@ -54,17 +54,18 @@ participantname :string;
     this.GetCompetition.GetOneCompetition(this.id).subscribe(data=>{
       console.log("all the data");
       console.log(data);
-      this.Resdata = data;
-      this.Name=this.Resdata.name;
-      this.Pricemoney=this.Resdata.priceMoney;
+      // this.Resdata = data;
+      this.Name=data.name;
+      this.Pricemoney=data.priceMoney;
       this.Place=this.Resdata.place;
       this.Pigeons=this.Resdata.pigeons;
       this.noofdays=this.Resdata.noofdays;
       this.User=this.Resdata.users;
       this.Fee=this.Resdata.fee;
-      // this.LeaderBoard=this.Resdata.leaderBoard; 
+      // this.NoOfPigeons =data.pigeons
+      // this.LeaderBoard=this.Resdata.leaderBoard;
     })
-
+    
     this.Getparticpants.GetAll().subscribe(data=>{
       console.log("Get particpants")
       console.log(data);
@@ -72,8 +73,6 @@ participantname :string;
     this.participantname=this.getalldata[0].name;
     console.log(this.participantname);
     })
-
-    
   }
   // getOnecompetition()
   // {

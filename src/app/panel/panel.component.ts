@@ -18,17 +18,11 @@ export class PanelComponent implements OnInit {
   private postcompetetion:PostcompetitionService) { }
 
   ngOnInit() {
-    // this.newService.GetAll().subscribe(data =>  {
-    // this.Repdata = data
-    // console.log(data);
-    // })
+    
   
     this.getallcompetetion.GetAllCompetition().subscribe(data =>  {
       this.Repdata = data
       console.log(this.Repdata);
-      // this.Repdata[0].name="Mahh";
-      // console.log(this.Repdata[0].name);
-      // console.log('here');
     })
       }
     Getobject(competitionobject):void

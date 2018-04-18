@@ -203,40 +203,40 @@
                     </div>
                     <!-- 1st row end -->
 
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12" style="width:100%;" >
-                            <div class="card" >
-                                <div class="card-header"  style="background-color:#3498db;">
-                                    <h4 class="title">Participants</h4>
-                                    <!-- <p class="category">New employs on 15th September, 2016</p> -->
-                                </div>
-                                <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead >
-                                            <tr>
-                                                <th>Name</th>
-                                                <th *ngFor="let pigeon of Pigeonsnum">Pigeons{{pigeon}}</th>
-                                                <th>total time</th>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12" style="width:100%;" >
+                                <div class="card" >
+                                    <div class="card-header"  style="background-color:#3498db;">
+                                        <h4 class="title">Participants</h4>
+                                        <!-- <p class="category">New employs on 15th September, 2016</p> -->
+                                    </div>
+                                    <div class="card-content table-responsive">
+                                        <table class="table table-hover">
+                                            <thead >
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th *ngFor="let pigeon of Pigeonsum">Pigeons{{pigeon}}</th>
+                                                    <th>total time</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            
+                                            <tr  *ngFor="let dashboard of  dashboarddata; let i=index;">
+                                                <td> <input  type="text" name="username" id="username"  class="form-control" [(ngModel)]="dashboard.name"></td>
+                                                <td> <input  type="datetime-local" name="p1t" id="p1t"  class="form-control" [(ngModel)]="dashboard.pigeon1"></td>
+                                                <td> <input  type="datetime-local" name="p2t" id="p2t"  class="form-control" [(ngModel)]="dashboard.pigeon2"></td>
+                                                <td> <input  type="datetime-local" name="totaltime" id="toaltime"  class="form-control" [(ngModel)]="dashboard.totaltime"></td>
+                                                <td><button type="submit"  (click)="Ondashboardclick(data)" value="User" 
+                                                    class="btn btn-danger pull-right">edit</button></td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                        
-                                         <tr  *ngFor="let dashboard of  dashboarddata; let i=index;">
-                                            <td> <input  type="text" name="username" id="username"  class="form-control" [(ngModel)]="dashboard.name"></td>
-                                            <td> <input  type="datetime-local" name="p1t" id="p1t"  class="form-control" [(ngModel)]="dashboard.pigeon1"></td>
-                                            <td> <input  type="datetime-local" name="p2t" id="p2t"  class="form-control" [(ngModel)]="dashboard.pigeon2"></td>
-                                            <td> <input  type="datetime-local" name="totaltime" id="toaltime"  class="form-control" [(ngModel)]="dashboard.totaltime"></td>
-                                            <td><button type="submit"  (click)="Ondashboardclick(data)" value="User" 
-                                                class="btn btn-danger pull-right">edit</button></td>
-                                        </tr>
-                                               
-                                        </tbody>
-                                    </table>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </div>
+                        </div>
 
 
 
@@ -246,5 +246,7 @@
                        
         </div>
     </div>
+
+    
 
     
