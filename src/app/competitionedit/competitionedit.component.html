@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header" data-background-color="red">
+                <h4 class="title"> Competition List</h4>
+                <p class="category">All The Users List</p>
+            </div>
+            <div class="card-content table-responsive">
+                <table class="table">
+                    <thead class="text-danger">
+                        <tr>
+                            <th>Name</th>
+                            <th>Place</th>
+                            <th>Users</th>
+                            <th>fee</th>
+                            <th>PriceMoney</th>
+                            <th>StartDate</th>
+                            <th>EndDate</th>
+                            <!-- <th>edit</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr *ngFor="let Competitiondata of Repdata | filter:term | paginate :{itemsPerPage:5 ,currentPage : p}" >
+                            <td>{{Competitiondata.name}}</td>
+                            <td>{{Competitiondata.place}}</td>
+                            <td>{{Competitiondata.users}}</td>
+                            <td>{{Competitiondata.fee}}</td>
+                            <td>{{Competitiondata.priceMoney}}</td>
+                            <td>{{Competitiondata.startDate}}</td>
+                            <td>{{Competitiondata.endDate}}</td>
+                            <td>
+                                <div class="navbar-form navbar-right">
+                                    <button type="submit"  routerLink="/participantedit/{{Competitiondata._id}}" (click)="Getobject(Competitiondata)" value="User" class="btn btn-danger pull-right">edit</button>
+                            </div>
+                            </td>
+                        </tr>
+                        <pagination-controls (pageChange)="p=$event"></pagination-controls> 
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>

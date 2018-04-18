@@ -1,0 +1,13 @@
+section#work .img-responsive{
+    margin: 0 auto;
+} 
+
+.carousel-inner{
+     height: 400px;
+ }
+
+ .item, img{
+     height: 100% !important;
+     width:  100% !important;
+     border: 1px solid transparent;
+ }

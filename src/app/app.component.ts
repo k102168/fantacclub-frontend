@@ -17,13 +17,16 @@ export class AppComponent implements OnInit {
     private _router: Subscription;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
+    
 
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
-
+    
     constructor( public location: Location, private router: Router) {}
 
     ngOnInit() {
+        
         $.material.init();
+        
         const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
         const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
 

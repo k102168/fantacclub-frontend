@@ -1,0 +1,177 @@
+
+<div class="main-content">
+    <div  class="container-fluid">
+
+
+            <div class="row" >
+                    <div class="col-lg-6 col-lg-offset-3 ">
+                        
+                      <div class="card">
+                          <div class="card-header" data-background-color="red">
+                              
+                              <h4 class="title">Add Competetion</h4> 
+                              <!-- <p class="category">Complete your profile</p> -->
+                          </div>
+                          <div class="card-content">
+                              <form #CompetetionFormData="ngForm" (ngSubmit)="AddCompetition(CompetetionFormData)">
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">Name</label>
+                                              <input type="text" name="name" id="name"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                  </div>
+                  
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                        <div class="form-group form-black label-floating is-empty">
+                                            <label class="control-label">Place</label>
+                                            <input type="text" name="place" id="place"  class="form-control" ngModel>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">User</label>
+                                              <input type="text" name="users" id="users"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">fee</label>
+                                              <input type="number" name="fee" id="fee"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">PriceMoney</label>
+                                              <input type="number" name="priceMoney" id="priceMoney"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">StartDate</label>
+                                              <input type="date" name="startDate" id="startDate"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+  
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">End Date</label>
+                                              <input type="date" name="endDate" id="endDate"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">Days</label>
+                                              <input type="text" name="noofdays" id="noofdays"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group form-black label-floating is-empty">
+                                              <label class="control-label">Pigeons</label>
+                                              <input type="number" name="pigeons" id="pigeons"  class="form-control" ngModel>
+                                          </div>
+                                      </div>
+                                      </div>
+                                  <!-- <button type="submit" class="btn btn-danger pull-right center-block">Submit</button>
+                                  <br>
+                                 <a href="gallery"> <p class="text-left">Need Help?</p></a>
+                                  <div class="clearfix"></div> -->
+                                 <!-- apni taraf se -->
+                                  <div class="form-group">
+                                      <label class="col-md-5 control-label" for="singlebutton"></label>
+                                      <div class="col-md-5">
+                                          <button id="singlebutton"  name="singlebutton" class="btn btn-danger center-block">
+                                              Submit
+                                          </button>
+                                      </div>
+                                  </div>
+                              </form>
+                  <br>
+                              <!-- <a href="/dashboard"> <p class="text-left">Need Help?</p></a> -->
+                              <div class="clearfix"></div>
+                              <!-- apni taraf se khatam  -->
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                        <!-- 1st table end here -->
+        <form class="navbar-form navbar-center"  id="filter">
+        <div class="form-group form-black is-empty">
+            <input type="text" [(ngModel)]="term"  name="term" class="form-control" placeholder="Search" >
+            <span class="material-input"></span>
+        </div>
+        <button type="icon" class="btn btn-white btn-round btn-just-icon" >
+                <i class="material-icons">search</i><div class="ripple-container"></div>
+            </button>
+    </form>
+    <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title"> Competition List</h4>
+                        <p class="category">All The Users List</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table">
+                            <thead class="text-danger">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Place</th>
+                                    <th>Users</th>
+                                    <th>fee</th>
+                                    <th>PriceMoney</th>
+                                    <th>StartDate</th>
+                                    <th>EndDate</th>
+                                    <!-- <th>edit</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <tr *ngFor="let Competitiondata of Repdata | filter:term | paginate :{itemsPerPage:5 ,currentPage : p}" >
+                                    <td>{{Competitiondata.name}}</td>
+                                    <td>{{Competitiondata.place}}</td>
+                                    <td>{{Competitiondata.users}}</td>
+                                    <td>{{Competitiondata.fee}}</td>
+                                    <td>{{Competitiondata.priceMoney}}</td>
+                                    <td>{{Competitiondata.startDate}}</td>
+                                    <td>{{Competitiondata.endDate}}</td>
+                                    <td>
+                                        <div class="navbar-form navbar-right">
+                                            <button type="submit"  routerLink="/usereditcomponent" (click)="Getobject(Competitiondata)" value="User" class="btn btn-danger pull-right">edit</button>
+                                    </div>
+                                    </td>
+                                </tr>
+                                <pagination-controls (pageChange)="p=$event"></pagination-controls> 
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+</div>
+
+</div>
+
+ 
