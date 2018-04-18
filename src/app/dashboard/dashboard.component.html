@@ -1,16 +1,16 @@
-<script src                        = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src                        = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<div class                         = "container">
+<!-- <script src                        = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src                        = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!-- <div class                         = "container">
    
     <div id                        = "myCarousel" class            = "carousel slide" data-ride = "carousel">
-      <!-- Indicators -->
+      Indicators (this line is comment)
       <ol class                    = "carousel-indicators">
         <li data-target            = "#myCarousel" data-slide-to   = "0" class                  = "active"></li>
         <li data-target            = "#myCarousel" data-slide-to   = "1"></li>
         <li data-target            = "#myCarousel" data-slide-to   = "2"></li>
       </ol>
   
-      <!-- Wrapper for slides -->
+      Wrapper for slides (this line is comment)
       <div class                   = "carousel-inner">
         <div class                 = "item active">
           <img src                 = "/assets/img/main3.jpg" alt   = "Los Angeles" style        = "width:100%;">
@@ -25,7 +25,7 @@
         </div>
       </div>
   
-      <!-- Left and right controls -->
+      Left and right controls (this line is comment)
       <a class                     = "left carousel-control" href  = "#myCarousel" data-slide   = "prev">
         <span class                = "glyphicon glyphicon-chevron-left"></span>
         <span class                = "sr-only">Previous</span>
@@ -35,7 +35,8 @@
         <span class                = "sr-only">Next</span>
       </a>
     </div>
-  </div>
+  </div> -->
+  <!-- <h1>this is testing: {{leaderBoard[0].participantsName}}</h1> -->
 <div class                         = "main-content">
     <div class                     = "container-fluid">
         
@@ -54,19 +55,17 @@
                     <tr>
                         <th>Name</th>
                         <th>TimetoFly</th>
-                        <th *ngFor = "let pigeon of Pigeons">Pigeons{{pigeon}}</th>
-                        <th>TotalTime</th>
-                        <th>grandtotal</th>
+                        <th *ngFor = "let pigeonLand of leaderBoard.pigeonLand">Pigeons{{pigeonLand.pigeonNumber}}</th>
+                        <th>Grand Total</th>
                     
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor     = "let data of dashboarddata">
-                        <td>{{data.name}}</td>
-                        <td>22:      2:                              0</td>
-                        <td>7</td>
-                        <td>18:      0:                              0:                           0</td>
-                        <td>19:      0:                              0:                           0</td>
+                    <tr *ngFor     = "let data of leaderBoard.data">
+                        <td>{{data.participantsName}}</td>
+                        <td>{{leaderBoard.flyTime}}</td>
+                        <td *ngFor = "let pigeonLand of data.pigeonLand">{{pigeonLand.landingTime}}</td>
+                        <td>{{data.grandTotal}}</td>
                     </tr>
                 </tbody>
             </table>
