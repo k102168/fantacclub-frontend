@@ -105,6 +105,7 @@ export class DashboardComponent implements OnInit {
   getLeaderBoard(){
     this.getLeaderBoardService.getLeaderBoard().subscribe(res=>{
       this.leaderBoard = {
+        activeCompetitionName: res[0].activeCompetitionName,
         data:res,
         pigeonLand:res[0].pigeonLand
       }
@@ -137,7 +138,7 @@ export class DashboardComponent implements OnInit {
     //           tension: 0
     //       }),
     //       low: 0,
-    //       high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    //       high: 50, 
     //       chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
     //   }
 
@@ -160,7 +161,7 @@ export class DashboardComponent implements OnInit {
     //           tension: 0
     //       }),
     //       low: 0,
-    //       high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    //       high: 1000, 
     //       chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
     //   }
 

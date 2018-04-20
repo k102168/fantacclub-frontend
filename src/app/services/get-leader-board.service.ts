@@ -13,7 +13,7 @@ export class GetLeaderBoardService {
 
   getLeaderBoard(){
 
-    return this.http.get('http://localhost:3000/api/leaderboard')  
+    return this.http.get('api/leaderboard')  
     .map((response: Response) => response.json())  
   }
 
