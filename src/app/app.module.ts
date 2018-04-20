@@ -35,11 +35,6 @@ import { CompadminComponent } from './compadmin/compadmin.component';
 import { CompetitioneditComponent } from './competitionedit/competitionedit.component';
 import { ParticipanteditComponent } from './participantedit/participantedit.component';
 import {UpdatePigeonTimingService} from './services/update-pigeon-timing.service';
-import {GuardComponent} from './components/guard/guard.component';
-
-// services
-import {GetLeaderBoardService} from './services/get-leader-board.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,10 +64,7 @@ import {GetLeaderBoardService} from './services/get-leader-board.service';
 RouterModule,
     AppRoutingModule
   ],
-  providers: [
-    GuardComponent,
-    GetLeaderBoardService,
-    GetAllService,
+  providers: [GetAllService,
     GetAllCompetetionService,
     PostcompetitionService , 
     GetonecompetitionService,

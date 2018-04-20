@@ -18,8 +18,6 @@ import { UsereditcomponentComponent } from './usereditcomponent/usereditcomponen
 import {CompadminComponent} from './compadmin/compadmin.component'
 import {CompetitioneditComponent} from './competitionedit/competitionedit.component'
 import {ParticipanteditComponent} from './participantedit/participantedit.component'
-import {GuardComponent} from './components/guard/guard.component'
-
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
@@ -32,7 +30,7 @@ const routes: Routes =[
     { path: 'aboutus',        component: AboutUsComponent },
     {path :'login' ,          component:AboutUsComponent},
     {path :'admin' ,          component:AdminComponent},
-    {path :'panel' ,          component:PanelComponent,canActivate: [GuardComponent],},
+    {path :'panel' ,          component:PanelComponent},
     {path :'compadmin',       component:CompadminComponent},
     {path :'participantedit/:_id' ,          component:ParticipanteditComponent},
     {path :'competetionedit' ,          component:CompetitioneditComponent},

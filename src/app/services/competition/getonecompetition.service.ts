@@ -11,9 +11,8 @@ export class GetonecompetitionService {
   GetOneCompetition(id){     
     let myParams = new URLSearchParams();
     myParams.append('_id', id);
-    let options = new RequestOptions({ params: myParams });
-    console.log("entered in get One service")    
-    return this.http.get('api/competition/'+id)  
+    let options = new RequestOptions({ params: myParams }); 
+    return this.http.get('http://localhost:3000/api/competition/'+id)  
     .map((response: Response) => response.json()) 
   }   
 }

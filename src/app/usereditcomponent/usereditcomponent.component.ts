@@ -4,6 +4,7 @@ import {GetonecompetitionService} from '../services/competition/getonecompetitio
 import {UpdatecompetitionService} from '../services/competition/updatecompetition.service'
 import{ PostService} from '../services/participants/post.service'
 import { GetAllService} from '../services/participants/get-all.service'
+import { filter } from 'rxjs/operator/filter';
 class Range implements Iterable<number> {
   constructor(
       public readonly low: number,
@@ -31,77 +32,57 @@ function range(low: number, high: number) {
 
 export class UsereditcomponentComponent implements OnInit {
 
-public Pigeonsum=6;
-  //  public Pigeonsnum =range(1,this.NoOfPigeons);
-  dashboarddata = [
-    { name :'Furqan',pigeon1:"25:20" , pigeon2:"30:30",totaltime:"55:50"},];
-
- Resdata;
+  Resdata;
   id:any;
   getalldata;
-Name: string;Place:string;User:String;Fee:String;Pricemoney:String; noofdays:number; Pigeons:String;
-participantname :string;
+  Name: string;
+  Place:string;
+  User:String;
+  Fee:String;
+  Pricemoney:String; 
+  noofdays:number; 
+  Pigeons:String;
+  participantname :string;
+  participantdata;
+  
+ 
   constructor(public route:ActivatedRoute,
-   private GetCompetition: GetonecompetitionService,
-  private UpdateCompetition:UpdatecompetitionService,
-  private postparticipants: PostService,
-  private Getparticpants : GetAllService,
+    private GetCompetition: GetonecompetitionService,
+    private UpdateCompetition:UpdatecompetitionService,
+    private postparticipants: PostService,
+    private Getparticpants : GetAllService,
   ) {}
-  ngOnInit() {
-     this.id = this.route.snapshot.params['_id'];
-    console.log("in user edit component");
-    console.log(this.id);
-    this.GetCompetition.GetOneCompetition(this.id).subscribe(data=>{
-      console.log("all the data");
-      console.log(data);
-      // this.Resdata = data;
-      this.Name=data.name;
-      this.Pricemoney=data.priceMoney;
-      this.Place=this.Resdata.place;
-      this.Pigeons=this.Resdata.pigeons;
-      this.noofdays=this.Resdata.noofdays;
-      this.User=this.Resdata.users;
-      this.Fee=this.Resdata.fee;
-      // this.NoOfPigeons =data.pigeons
-      // this.LeaderBoard=this.Resdata.leaderBoard;
-    })
-    
-    this.Getparticpants.GetAll().subscribe(data=>{
-      console.log("Get particpants")
-      console.log(data);
-    this.getalldata=data;
-    this.participantname=this.getalldata[0].name;
-    console.log(this.participantname);
-    })
-  }
-  // getOnecompetition()
-  // {
-    
-  //   // this.getallcompetetion.GetAllCompetition().subscribe(data =>  {
-  //   //   this.Repdata = data
-  //   //   console.log(this.Repdata);
-  // }
 
-  
-  EditCompetetion(form){
-    console.log("enter in Edit competetion Function");
-    console.log(form.value);
-    this.UpdateCompetition.updateCompetetion(form.value).subscribe();
-
-  }
-  Addparticipant(form)
-  {
-    console.log("enter in Addparticipant Function");
-    console.log(form.value);
-    this.postparticipants.Post(form.value).subscribe();
-  }
-  Ondashboardclick(dashboardtabledata)
-  {
-    console.log(this.dashboarddata);
-
-  }
-
-  
-
-
+      EditCompetetion(form){
+        this.UpdateCompetition.updateCompetetion(form.value).subscribe();
+        location.reload();
+      }
+      Addparticipant(form){
+        console.log('participants add form',form.value);
+        this.postparticipants.Post(form.value).subscribe();
+        location.reload();
+      }
+      ngOnInit() {
+         this.id = this.route.snapshot.params['_id'];
+        let compid = this.route.snapshot.params['_id'];
+                //get The Competition For Edit
+                this.GetCompetition.GetOneCompetition(this.id).subscribe(data=>{
+                  this.Name=data.name;
+                  this.Pricemoney=data.priceMoney;
+                  this.Place=data.place;
+                  this.Pigeons=data.pigeons;
+                  this.noofdays=data.noofdays;
+                  this.User=data.users;
+                  this.Fee=data.fee;
+                })
+                
+                this.Getparticpants.GetAll().subscribe(data=>{
+                  let filterdParticipants=data.filter(function (singleUser) {
+                      return singleUser.competitionId === compid;  
+                  });
+                  this.participantdata=filterdParticipants;  
+                  console.log(this.participantdata); 
+                })
+                
+}
 }
