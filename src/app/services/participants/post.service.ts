@@ -11,7 +11,7 @@ export class PostService {
   Post(user){ 
     console.log("enter in post participant");
     console.log(user);     
-    return this.http.post('http://localhost:3000/api/participant/', user)  
+    return this.http.post('api/participant/', user)  
          .map((response: Response) =>response.json())
   }
 }

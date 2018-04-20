@@ -12,7 +12,7 @@ export class SigninService {
   Userlogin(user){    
     console.log("enter in  UserLoginFunction");    
     console.log(user);  
-    return this.http.post('http://localhost:3000/api/account/login', user) 
+    return this.http.post('api/account/login', user) 
              .map((response: Response) =>response.json())              
               
   }  

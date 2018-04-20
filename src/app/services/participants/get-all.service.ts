@@ -11,7 +11,7 @@ export class GetAllService {
 
   GetAll(){     
     //console.log("entered in get all function")    
-    return this.http.get('http://localhost:3000/api/participant')  
+    return this.http.get('api/participant')  
     .map((response: Response) => response.json())    
   }
 

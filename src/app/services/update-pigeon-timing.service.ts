@@ -11,7 +11,7 @@ export class UpdatePigeonTimingService {
   updatePigeonTime(payload,participantId){ 
     console.log("enter in post participant");
     console.log(payload);
-    let url=`http://localhost:3000/api/participant/${participantId.trim()}`
+    let url=`api/participant/${participantId.trim()}`
     // return this.http.put(url, payload)  
     //      .map((response: Response) =>response.json())
 

@@ -46,7 +46,7 @@
 <div class                         = "col-lg-6 col-md-12" style    = "width:100%;" >
     <div class                     = "card" >
         <div class                 = "card-header"  >
-            <h4 class              = "title">Participants</h4>
+            <h4 class              = "title">{{leaderBoard.activeCompetitionName}}</h4>
             <!-- <p class          = "category">New employs on 15th September, 2016</p> -->
         </div>
         <div class                 = "card-content table-responsive">
@@ -63,7 +63,7 @@
                 <tbody>
                     <tr *ngFor     = "let data of leaderBoard.data">
                         <td>{{data.participantsName}}</td>
-                        <td>{{leaderBoard.flyTime}}</td>
+                        <td>{{data.flyTime}}</td>
                         <td *ngFor = "let pigeonLand of data.pigeonLand">{{pigeonLand.landingTime}}</td>
                         <td>{{data.grandTotal}}</td>
                     </tr>

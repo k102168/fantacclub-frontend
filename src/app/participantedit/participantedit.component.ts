@@ -30,7 +30,7 @@ function range(low: number, high: number) {
   styleUrls: ['./participantedit.component.scss']
 })
 export class ParticipanteditComponent implements OnInit {
-  public NoOfPigeons=7;
+  //public NoOfPigeons=7;
     public Pigeonsnum =range(1,this.NoOfPigeons);
   //dummy data
     dashboarddata = [
@@ -79,7 +79,7 @@ export class ParticipanteditComponent implements OnInit {
         this.noofdays=data.noofdays;
         this.User=data.users;
         this.Fee=data.fee;
-        // this.NoOfPigeons =data.pigeons
+        this.NoOfPigeons =data.pigeons
         // this.LeaderBoard=this.Resdata.leaderBoard;
       })
 
