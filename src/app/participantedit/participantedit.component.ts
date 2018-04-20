@@ -28,7 +28,6 @@ function range(low: number, high: number) {
 
 
 export class ParticipanteditComponent implements OnInit {
-<<<<<<< HEAD
   //  public NoOfPigeons=7;
   //   public Pigeonsnum =range(1,this.NoOfPigeons);
   NoOfPigeons :number =0;
@@ -39,21 +38,6 @@ export class ParticipanteditComponent implements OnInit {
       participantid:any;
       //all participant
       allparticipant: any;
-=======
-  //public NoOfPigeons=7;
-    public Pigeonsnum =range(1,this.NoOfPigeons);
-  //dummy data
-    dashboarddata = [
-    { name :'Furqan',pigeon1:"25:20" , pigeon2:"30:30",totaltime:"55:50"},];
-    //feilds for get one competetion
-    Name: string;
-    Place:string;
-    User:String;
-    Fee:String;
-    Pricemoney:String; 
-    noofdays:number; 
-    Pigeons:String;
->>>>>>> e9ed0a443e170740b010a82ab662b8dd08df5029
 
     constructor(
     public route:ActivatedRoute,
