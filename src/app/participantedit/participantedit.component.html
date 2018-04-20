@@ -5,8 +5,8 @@
             <div class="col-lg-6 col-md-12" style="width:100%;" >
                 <div class="card" >
                     <div class="card-header"  style="background-color:#3498db;">
-                        <h4 class="title">Participants</h4>
-                        <!-- <p class="category">New employs on 15th September, 2016</p> -->
+                        <h4 class="title">Participants {{NoOfPigeons}}</h4>
+                       
                     </div>
                     <div class="card-content table-responsive">
                         <table class="table table-hover">
@@ -19,10 +19,10 @@
                             </thead>
                             <tbody>
                                
-                             <tr  *ngFor="let dashboard of  dashboarddata; let i=index;">
-                                <td> <input  type="text" placeholder="UserName" name="username" id="username"  class="form-control" [(ngModel)]="dashboard.name"></td>
+                             <tr  *ngFor="let participant of  participantdata; let i=index;"  >
+                                <td> <input  type="text" placeholder="UserName" name="username" id="username"  class="form-control" [(ngModel)]="participant.name"></td>
                                 <td *ngFor="let pigeon of Pigeonsnum">
-                                    <input value="" type="text" placeholder="hh:mm:ss" name="name" id="username"  class="form-control"  (input)="pigeonTiming($event.target.value,pigeon)">
+                                    <input value="" type="text"   [(ngModel)]="participant.pigeonLand[pigeon-1].landingTime"placeholder="hh:mm:ss" name="name"  class="form-control" [(ngModel)]="pigeon.numbe" (blur)="pigeonTiming($event.target.value,pigeon,participant._id)">
                                 </td>
                             </tr>
                                    
@@ -31,8 +31,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
-    
     </div>
       </div>
+
+      

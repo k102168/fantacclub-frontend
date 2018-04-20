@@ -19,8 +19,6 @@ export class CompetitioneditComponent implements OnInit {
       console.log(data);
       this.Repdata=data;
     })
-    
-    
   }
 
   Getobject(competitionobject):void
