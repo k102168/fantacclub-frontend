@@ -146,7 +146,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                 <tr *ngFor="let Competitiondata of Repdata | filter:term | paginate :{itemsPerPage:5 ,currentPage : p}" >
+                                 <tr *ngFor="let Competitiondata of Resdata | filter:term | paginate :{itemsPerPage:5 ,currentPage : p}" >
                                     <td>{{Competitiondata.name}}</td>
                                     <td>{{Competitiondata.place}}</td>
                                     <td>{{Competitiondata.users}}</td>
@@ -156,7 +156,7 @@
                                     <td>{{Competitiondata.endDate}}</td>
                                     <td>
                                         <div class="navbar-form navbar-right">
-                                            <button type="submit"  routerLink="/usereditcomponent" (click)="Getobject(Competitiondata)" value="User" class="btn btn-danger pull-right">edit</button>
+                                            <button type="submit"  routerLink="/usereditcomponent/{{Competitiondata._id}}" (click)="Getobject(Competitiondata)" value="User" class="btn btn-danger pull-right">edit</button>
                                     </div>
                                     </td>
                                 </tr>

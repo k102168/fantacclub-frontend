@@ -8,8 +8,6 @@ export class UpdatecompetitionService {
 
   constructor(private http:Http,) { }
   updateCompetetion(user){    
-    console.log("enter in post competition");    
-    console.log(user);  
     return this.http.put('http://localhost:3000/api/competition',user) 
               .map((response: Response) =>response.json())              
   }  

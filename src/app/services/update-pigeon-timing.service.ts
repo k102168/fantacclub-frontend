@@ -8,12 +8,11 @@ import 'rxjs/add/operator/do';
 export class UpdatePigeonTimingService {
 
   constructor(private http:Http) { }
-  updatePigeonTime(payload,participantId){ 
-    console.log("enter in post participant");
-    console.log(payload);
-    let url=`http://localhost:3000/api/participant/${participantId.trim()}`
-    // return this.http.put(url, payload)  
-    //      .map((response: Response) =>response.json())
 
+  
+  updatePigeonTime(payload,participantId){ 
+        let url=`http://localhost:3000/api/participant/${participantId.trim()}`
+        return this.http.put(url, payload)  
+            .map((response: Response) =>response.json())
   }
 }

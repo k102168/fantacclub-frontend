@@ -9,8 +9,7 @@ export class GetAllService {
 
   constructor(private http:Http) { }
 
-  GetAll(){     
-    //console.log("entered in get all function")    
+  GetAll(){       
     return this.http.get('http://localhost:3000/api/participant')  
     .map((response: Response) => response.json())    
   }
